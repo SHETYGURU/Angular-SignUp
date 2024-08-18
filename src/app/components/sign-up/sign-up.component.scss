@@ -1,0 +1,114 @@
+body {
+  background-color: #97bdff; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.landing-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 70vh;
+  width: 70%; /* Adjust width to fit new layout */
+  background-color: #f7faff; /* Very light blue background */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding around the container */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  border-radius: .5cm;
+  position: relative; /* Ensure positioning of elements inside */
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-section img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.form-container {
+  background-color: #ffffff !important; /* Ensure background color is applied */
+  padding: 1rem; /* Reduced padding for a smaller form */
+  border: none; /* Remove border */
+  width: 80%; /* Adjust width for the container */
+  max-width: 600px; /* Reduced max width to make it fit better */
+  text-align: center;
+  height: auto; /* Automatic height to fit content */
+  min-height: 300px; /* Minimum height to ensure form is not too small */
+}
+
+h1 {
+  font-size: 1.3rem; /* Slightly smaller font size for the heading */
+  margin-bottom: 1rem;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: -.5rem; /* Reduced margin-bottom for compactness */
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  border-radius: 12px; /* Rounded corners for the button */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 1rem;
+}
+
+.section-two {
+  position: relative; /* Ensure positioning of the go-back button */
+}
+
+.go-back-button {
+  color: blue;
+  position: absolute;
+  top: -2.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.go-back-text {
+  color: blue;
+  margin-left: 0.5rem;
+}
+
+.additional-info-form {
+  background-color:transparent ;/* Ensure background color is applied */
+  padding: 0.75rem; /* Reduced padding for a smaller form */
+  border: none; /* Remove border */
+  width: 100%; /* Adjust width for the container */
+  max-width: 600px; /* Reduced max width to make it fit better */
+  text-align: center;
+  height: auto; /* Automatic height to fit content */
+  min-height: 300px; /* Minimum height to ensure form is not too small */
+}
+
+.additional-info-form .mat-form-field {
+  width: 100%;
+  margin-bottom: -.5rem; /* Reduced margin-bottom for compactness */
+  height: 10%; /* Reduced height for Section 2 fields */
+}
+
+.additional-info-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  border-radius: 12px; /* Rounded corners for the button */
+}

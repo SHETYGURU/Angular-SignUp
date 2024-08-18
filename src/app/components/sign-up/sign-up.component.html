@@ -1,0 +1,104 @@
+
+<body>
+  <div class="landing-container">
+    <div class="left-section">
+      <img src="../../../assets/images/image.png" alt="Welcome Image" />
+    </div>
+    <div class="right-section">
+      <div class="form-container">
+        <!-- Section 1 -->
+        <div *ngIf="currentSection === 1">
+          <h1>Sign Up a New User!</h1>
+          <form [formGroup]="signUpForm" (ngSubmit)="nextSection()">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" formControlName="name" />
+              <mat-error *ngIf="name?.errors?.['required']">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email address</mat-label>
+              <input matInput placeholder="Email address" formControlName="email" />
+              <mat-error *ngIf="email?.errors?.['required']">Email address is required</mat-error>
+              <mat-error *ngIf="email?.errors?.['email']">Please enter a valid email address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Password" formControlName="password" />
+              <mat-error *ngIf="password?.errors?.['required']">Password is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+              <mat-error *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="Phone Number" formControlName="phone" />
+              <mat-error *ngIf="phone?.errors?.['required']">Phone number is required</mat-error>
+            </mat-form-field>
+
+            <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">Passwords should match</mat-error>
+
+            <div class="center margin-top">
+              <button type="submit" mat-raised-button color="primary">Next</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Section 2 -->
+        <div *ngIf="currentSection === 2" class="section-two">
+          <button mat-icon-button (click)="goBack()" aria-label="Go back" class="go-back-button">
+            <mat-icon>arrow_back</mat-icon> <span class="go-back-text">Go Back</span>
+          </button>
+
+          <form [formGroup]="additionalInfoForm" (ngSubmit)="submit()" class="additional-info-form">
+            <mat-form-field appearance="outline">
+              <mat-label>Organization Name</mat-label>
+              <input matInput placeholder="Organization Name" formControlName="organizationName"  style="max-height: 30px;">
+              <mat-error *ngIf="organizationName?.errors?.['required']">Organization Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Organization ID</mat-label>
+              <input matInput placeholder="Organization ID" formControlName="orgId" />
+              <mat-error *ngIf="orgId?.errors?.['required']">Organization ID is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Designation</mat-label>
+              <input matInput placeholder="Designation" formControlName="designation" />
+              <mat-error *ngIf="designation?.errors?.['required']">Designation is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Birth Date</mat-label>
+              <input matInput type="date" placeholder="Birth Date" formControlName="birthDate" />
+              <mat-error *ngIf="birthDate?.errors?.['required']">Birth Date is required</mat-error>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="City" formControlName="city" />
+              <mat-error *ngIf="city?.errors?.['required']">City is required</mat-error>
+            </mat-form-field> -->
+
+            <mat-form-field appearance="outline">
+              <mat-label>Pincode</mat-label>
+              <input matInput placeholder="Pincode" formControlName="pincode" />
+              <mat-error *ngIf="pincode?.errors?.['required']">Pincode is required</mat-error>
+            </mat-form-field>
+
+            <div class="center margin-top">
+              <button type="submit" mat-raised-button color="primary">Sign Up!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
